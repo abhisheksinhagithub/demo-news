@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react'
+import Navbar from './components/Navbar';
+import BreakingNews from './components/BreakingNews';
+import NewsItem from './components/NewsItem';
+import Footer from './components/Footer';
+import ErrorPage from './components/ErrorPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <BreakingNews />
+
+        <NewsItem />
+        <Footer/>
+
+        {/* <Router>
+          <Routes>
+            <Route path="*" element={<ErrorPage />} />
+
+          </Routes>
+        </Router> */}
+      </div>
+    )
+  }
 }
 
-export default App;

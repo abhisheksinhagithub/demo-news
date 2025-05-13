@@ -1,38 +1,291 @@
-.App {
-  text-align: center;
+body
+{
+  /* background-color: #ccf4e5; */
+  /* background-color:#20cd8d; */
+  /* background-color: black; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.custom-textarea::placeholder {
+  color: rgba(247, 240, 240, 0.868); /* or any color you want */
+  opacity: 1; /* make sure it's fully visible */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Profile dropdown styles */
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.profile-button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #2d4048;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dropdown-item {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: #1dcd8d;
+}
+
+.profile-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-icon {
+    margin-right: 10px;
+    font-size: 1.1em;
+    vertical-align: middle;
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-item:hover .dropdown-icon {
+    transform: translateX(3px);
+    transition: transform 0.2s ease;
+}
+
+.dropdown-item:active {
+    background-color: #1dcd8d;
+    transition: background-color 0.1s;
+}
+
+/* Enhanced Dropdown Styles */
+.dropdown-item-container {
+    position: relative;
+}
+
+.submenu {
+    background-color: #22343a;
+    margin-left: 8px;
+    border-left: 2px solid #1dcd8d;
+}
+
+.dropdown-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.float-end {
+    margin-left: auto;
+}
+
+/* Arrow animation */
+.dropdown-item:hover .ri-arrow-right-s-line {
+    transform: translateX(3px);
+    transition: transform 0.2s ease;
+}
+
+/* Submenu animation */
+.submenu {
+    animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.subnavbar {
+    font-size: 14px;
+    border-bottom: 1px solid #2d4048;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    border: 1px solid #2d4048;
+    border-radius: 4px;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 8px 20px;
+    clear: both;
+    font-weight: 400;
+    color: white;
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    text-align: left;
+}
+
+.dropdown-item:hover {
+    /* background-color: #2d4048; */
+    color: white;
+}
+
+.btn-link:hover {
+    text-decoration: none;
+}
+
+/* Breaking News Component */
+.breaking-news-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #d92b2b;
   color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  margin-left: 20px;
+  font-size: 14px;
+  animation: fadeInOut 1s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.breaking-news-label {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.breaking-news-badge {
+  font-weight: bold;
+  margin-right: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
+
+.breaking-news-content {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.news-category {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-right: 12px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.news-title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 300px;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* For scrolling animation (alternative) */
+.scrolling-ticker {
+  display: inline-block;
+  animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Breaking News Component */
+.breaking-news-container {
+  display: flex;
+  align-items: center;
+  background-color: #d92b2b;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  margin-left: 20px;
+  font-size: 14px;
+  animation: fadeInOut 1s ease-in-out;
+}
+
+.breaking-news-label {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.breaking-news-badge {
+  font-weight: bold;
+  margin-right: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.breaking-news-content {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.news-category {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-right: 12px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.news-title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 300px;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* For scrolling animation (alternative) */
+.scrolling-ticker {
+  display: inline-block;
+  animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
